@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Интерактивный музей жизни и творчества Александра Сергеевича Пушкина. Проект Тамина Амангельдиева.">
+  <title>Пушкин — литературный музей | Тамина</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="brand" href="#home">П <span>·</span> М</a>
+    <nav>
+      <a href="#home">Главная</a>
+      <a href="#biography">Биография</a>
+      <a href="#works">Творчество</a>
+      <a href="#final-years">Последние годы</a>
+    </nav>
+    <button id="soundToggle" class="sound-toggle" aria-label="Включить или выключить звук">♫</button>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Интерактивный литературный музей</p>
+        <p class="author-name">Амангельдиева, Тамина</p>
+        <div class="ornament">✦ ───────── ✦</div>
+        <h1>Александр Сергеевич<br><span>Пушкин</span></h1>
+        <p class="hero-subtitle">Жизнь · Творчество · Наследие</p>
+        <button class="gold-button" id="beginButton">
+          Начать путешествие <span>→</span>
+        </button>
+        <p class="hint">Встретьтесь с поэтом и услышьте его историю</p>
+      </div>
+      <div class="hero-candle candle-one"></div>
+      <div class="hero-candle candle-two"></div>
+      <a class="scroll-cue" href="#biography">Листайте вниз ↓</a>
+    </section>
+
+    <section id="biography" class="section biography-section">
+      <div class="section-heading">
+        <p class="eyebrow">Глава первая</p>
+        <h2>Позвольте представиться</h2>
+        <p>Познакомьтесь с поэтом, который изменил русскую литературу.</p>
+      </div>
+
+      <div class="museum-layout">
+        <div class="portrait-frame">
+          <div id="scene3d" aria-label="Интерактивный трёхмерный персонаж Пушкина"></div>
+          <div class="portrait-caption">
+            <span>А. С. Пушкин</span>
+            <span>1799–1837</span>
+          </div>
+          <p class="drag-hint">↔ Перетащите, чтобы повернуть персонажа</p>
+        </div>
+
+        <div class="speech-card">
+          <div class="card-topline"><span>Голос из прошлого</span><span>№ 01</span></div>
+          <p class="eyebrow">Александр Сергеевич Пушкин</p>
+          <h3>Я расскажу вам свою историю</h3>
+          <div id="speechText" class="speech-text" aria-live="polite">
+            Здравствуйте! Меня зовут Александр Сергеевич Пушкин. Добро пожаловать в мой литературный мир!
+          </div>
+          <div class="speech-controls">
+            <button id="speakButton" class="gold-button">▶ Слушать рассказ</button>
+            <button id="pauseButton" class="outline-button">Ⅱ Пауза</button>
+          </div>
+          <p class="voice-note" id="voiceStatus">Нажмите «Слушать рассказ», чтобы услышать голос.</p>
+          <div class="chapter-controls">
+            <button id="prevChapter" class="round-button" aria-label="Предыдущая глава">←</button>
+            <span id="chapterCounter">Глава 1 из 5</span>
+            <button id="nextChapter" class="round-button" aria-label="Следующая глава">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section timeline-section">
+      <div class="section-heading">
+        <p class="eyebrow">Путь поэта</p>
+        <h2>Важные даты</h2>
+        <p>Нажмите на год, чтобы узнать подробности.</p>
+      </div>
+      <div class="timeline" id="timeline">
+        <button class="timeline-item active" data-index="0">
+          <span class="timeline-dot"></span>
+          <span class="timeline-year">1799</span>
+          <span class="timeline-label">Рождение</span>
+        </button>
+        <button class="timeline-item" data-index="1">
+          <span class="timeline-dot"></span>
+          <span class="timeline-year">1811</span>
+          <span class="timeline-label">Лицей</span>
+        </button>
+        <button class="timeline-item" data-index="2">
+          <span class="timeline-dot"></span>
+          <span class="timeline-year">1820</span>
+          <span class="timeline-label">Ссылка на юг</span>
+        </button>
+        <button class="timeline-item" data-index="3">
+          <span class="timeline-dot"></span>
+          <span class="timeline-year">1831</span>
+          <span class="timeline-label">Семья</span>
+        </button>
+        <button class="timeline-item" data-index="4">
+          <span class="timeline-dot"></span>
+          <span class="timeline-year">1837</span>
+          <span class="timeline-label">Последний год</span>
+        </button>
+      </div>
+      <article class="timeline-detail" aria-live="polite">
+        <span id="dateNumber" class="date-number">1799 — Рождение</span>
+        <p id="dateDescription">6 июня 1799 года в Москве родился Александр Сергеевич Пушкин — будущий великий русский поэт.</p>
+      </article>
+    </section>
+
+    <section id="works" class="section works-section">
+      <div class="section-heading">
+        <p class="eyebrow">Литературное наследие</p>
+        <h2>Мир моих произведений</h2>
+        <p>Произведения, которые читают и сегодня.</p>
+      </div>
+
+      <div class="works-grid">
+        <article class="work-card">
+          <div class="book-cover cover-one"><span>А. С. Пушкин</span><strong>Евгений<br>Онегин</strong><small>Роман в стихах</small></div>
+          <h3>Евгений Онегин</h3>
+          <p>Роман в стихах о любви, обществе и судьбах людей.</p>
+        </article>
+        <article class="work-card">
+          <div class="book-cover cover-two"><span>А. С. Пушкин</span><strong>Капитанская<br>дочка</strong><small>Историческая повесть</small></div>
+          <h3>Капитанская дочка</h3>
+          <p>Повесть о чести, верности и событиях восстания Пугачёва.</p>
+        </article>
+        <article class="work-card">
+          <div class="book-cover cover-three"><span>А. С. Пушкин</span><strong>Руслан<br>и Людмила</strong><small>Поэма</small></div>
+          <h3>Руслан и Людмила</h3>
+          <p>Сказочная поэма, наполненная приключениями и волшебством.</p>
+        </article>
+        <article class="work-card">
+          <div class="book-cover cover-four"><span>А. С. Пушкин</span><strong>Борис<br>Годунов</strong><small>Драма</small></div>
+          <h3>Борис Годунов</h3>
+          <p>Историческая драма о власти, совести и народе.</p>
+        </article>
+      </div>
+
+      <blockquote class="quote">
+        <span>«Я памятник себе воздвиг нерукотворный…»</span>
+        <cite>А. С. Пушкин, 1836</cite>
+      </blockquote>
+    </section>
+
+    <section id="final-years" class="section final-section">
+      <div class="final-copy">
+        <p class="eyebrow">Глава последняя</p>
+        <h2>Последние годы</h2>
+        <p>В 1831 году Пушкин женился на Наталье Гончаровой. Он продолжал писать стихи, прозу и исторические произведения.</p>
+        <p>27 января 1837 года по старому стилю состоялась дуэль поэта с Жоржем Дантесом. Пушкин был смертельно ранен и скончался 29 января (10 февраля по новому стилю) 1837 года в Санкт-Петербурге.</p>
+        <p>Его произведения навсегда остались частью русской и мировой культуры.</p>
+      </div>
+      <div class="final-portrait">
+        <div class="portrait-placeholder">А. С.<br><span>Пушкин</span><small>1799 — 1837</small></div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="ornament">✦ ───────── ✦</div>
+      <p class="eyebrow">Литературное наследие</p>
+      <h2>Его строки продолжают жить</h2>
+      <p>Спасибо, что познакомились с жизнью и творчеством Александра Сергеевича Пушкина.</p>
+      <button class="gold-button" id="restartButton">Пройти ещё раз ↻</button>
+      <p class="project-credit">Автор проекта: Амангельдиева, Тамина</p>
+    </section>
+  </main>
+
+  <footer>
+    <span>Литературный музей · Александр Сергеевич Пушкин</span>
+    <a href="#home">Вернуться наверх ↑</a>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
